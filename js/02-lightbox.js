@@ -13,23 +13,24 @@ function creatGalleryCardItems(galleryItemCard) {
                 <img class="gallery__image" src="${preview}" alt="${description}" />
                 </a>`
     }).join('');
+    
     return itemcard;
 }
-
 
 
 galleryFn.addEventListener('click', (event) => {
     const galleryItemImg = event.target.classList.contains('gallery__image');
     if (!galleryItemImg) {
-        return;
+             return;
     }
-    event.preventDefault();
-    const imgAlt = event.target.dataset.alt;
+    
+  
+  event.preventDefault();
     const itemImg = galleryFn.children;
-    console.log(imgAlt);
-
-    new SimpleLightbox(itemImg);
-    SimpleLightbox.open(itemImg);
+      new SimpleLightbox(itemImg, {captionsData: 'alt', captionDelay: 250});
+  
+    open.SimpleLightbox;
+  
 })
 
 
